@@ -50,3 +50,17 @@ public:
 };
 
 // kuch nhi ka karna bus 0,1,2 k count store kar lo map ke under phir nums ko replace kardo sorted way me bus
+-------------------------------
+     class Solution {
+public:
+    int removeDuplicates(vector<int>& nums) {
+        int j = 1;
+        for(int i = 1; i < nums.size(); i++){
+            if(nums[i] != nums[i - 1]){
+                nums[j] = nums[i];
+                j++;
+            }
+        }
+        return j;
+    }
+};
