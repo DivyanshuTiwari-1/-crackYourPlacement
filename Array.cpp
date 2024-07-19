@@ -64,3 +64,45 @@ public:
         return j;
     }
 };
+---------------------------------
+         int maxProfit(std::vector<int>& prices) {
+        int buy = prices[0];
+        int profit = 0;
+        for (int i = 1; i < prices.size(); i++) {
+            if (prices[i] < buy) {
+                buy = prices[i];
+            } else if (prices[i] - buy > profit) {
+                profit = prices[i] - buy;
+            }
+        }
+        return profit;
+    }
+--------------------------------
+       int maxProfit(vector<int>& prices) {
+        int buy=prices[0];
+        
+        int totalprofit=0;
+        for (int i=1;i<prices.size();i++){
+            if(prices[i]<=buy){
+                buy=prices[i];
+            }
+            else if(prices[i]-buy>0){
+                
+                totalprofit+=prices[i]-buy;
+                buy=prices[i];
+            }
+        }
+        return totalprofit;
+    }
+------------------------------------
+      void moveZeroes(vector<int>& nums) {
+        int left = 0;
+
+        for (int right = 0; right < nums.size(); right++) {
+            if (nums[right] != 0) {
+                swap(nums[right], nums[left]);
+                left++;
+            }
+        }        
+    }
+---------------------------
